@@ -1,5 +1,5 @@
 # Resource Group
-resource "azurerm_resource_group" "jpetstore-rg" {
+resource "azurerm_resource_group" "ci-cd-rg" {
   name     = "${var.prefix}-resources"
   location = "North Europe"
 

@@ -1,6 +1,6 @@
 variable "prefix" {
   # A personnaliser avec votre nom
-  default = "smontri"
+  default = "ci-cd"
 }
 
 variable "environment" {
@@ -8,7 +8,7 @@ variable "environment" {
 }
 
 variable "project" {
-  default = "jpetstore"
+  default = "ci-cd"
 }
 
 variable "ssh_key" {

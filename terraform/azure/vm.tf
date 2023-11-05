@@ -1,10 +1,10 @@
 # Virtual Machine
-resource "azurerm_linux_virtual_machine" "jpetstore-vm" {
+resource "azurerm_linux_virtual_machine" "ci-cd-vm" {
   name                  = "${var.prefix}-vm"
-  location              = azurerm_resource_group.jpetstore-rg.location
-  resource_group_name   = azurerm_resource_group.jpetstore-rg.name
+  location              = azurerm_resource_group.ci-cd-rg.location
+  resource_group_name   = azurerm_resource_group.ci-cd-rg.name
   network_interface_ids = [
-    azurerm_network_interface.jpetstore-nic.id
+    azurerm_network_interface.ci-cd-nic.id
   ]
   size                  = "Standard_D2s_v3"
   admin_username        = "adminuser"
@@ -35,5 +35,5 @@ resource "azurerm_linux_virtual_machine" "jpetstore-vm" {
 }
 
 output "vm_name" {
-  value = azurerm_linux_virtual_machine.jpetstore-vm.name
+  value = azurerm_linux_virtual_machine.ci-cd-vm.name
 }
