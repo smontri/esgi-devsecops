@@ -10,7 +10,8 @@ Les templates AWS ou Azure sont disponibles pour déployer la VM utilisée pour 
 ## Azure
 [Fichiers Terraform pour Azure](./terraform/azure)
 
-# Installation 
+# Installation de Trivy
+
 
 
 # Exercice 3 - Analyse de vulnérabilité

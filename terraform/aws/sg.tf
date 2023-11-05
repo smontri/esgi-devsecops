@@ -1,10 +1,10 @@
 #########
 # Security group configuration
 
-resource "aws_security_group" "jpetstore_sg" {
+resource "aws_security_group" "ci-cd_sg" {
   description = "Security group to allow SSH and Jenkins + Sonarqube"
   name   = "HTTP and SSH"
-  vpc_id = aws_vpc.jpetstore_vpc.id
+  vpc_id = aws_vpc.ci-cd_vpc.id
 
   ingress {
     description = "Trafic through port 8080"

@@ -4,5 +4,5 @@ output "region" {
 }
 
 output "ec2instance_ip" {
-  value = aws_instance.jpetstore_instance.public_ip
+  value = aws_instance.ci-cd_instance.public_ip
 }
