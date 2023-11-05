@@ -1,0 +1,43 @@
+name: Terraform Check
+
+on: push
+
+permissions:
+      id-token: write
+      contents: read
+
+jobs:
+  jsp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Terraform 
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Az CLI login
+        uses: azure/login@v1
+        with:
+          creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
+
+      - name: Init terraform
+        run: terraform init
+
+      - name: Validate code
+        run: terraform validate
+        
+      - name: Build plan
+        run: terraform plan
+
+      - name: Apply
+        run: terraform apply -auto-approve
+        env:
+          TF_VAR_ssh_key: ${{ secrets.AZURE_SSH_KEY }}
+
+      - name: Get ip
+        run: terraform refresh
+      
+      - name: Destroy
+        run: terraform destroy -auto-approve
