@@ -1,10 +1,18 @@
 # ESGI-DevSecOps
-Repository pour les artifacts du cours DevSecOps pour l'ESGI
+Ce repository content les artifacts du cours DevSecOps pour l'ESGI
 
-# Exercice 1 - Déploiement Terraform
-Déploiement Terraform via GitHub Actions
+# Templates Terraform
+Les templates AWS ou Azure sont disponibles pour déployer la VM utilisée pour les outils nécessaires à la pratique DevSecOps.
 
-# Exercice 2 - Analyse IaC
+## AWS
+[Fichiers Terraform pour AWS](./terraform/aws)
+
+## Azure
+[Fichiers Terraform pour Azure](./terraform/azure)
+
+# Installation 
 
 
 # Exercice 3 - Analyse de vulnérabilité
+
+# Exercice - Pipeline DevSecOps
