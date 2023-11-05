@@ -15,7 +15,7 @@ Les templates AWS ou Azure sont disponibles pour déployer la VM utilisée pour 
 ## Installation de Trivy
 Utiliser les commandes ci-dessous pour installer Trivy
 
-```
+```shell
 sudo apt-get install wget apt-transport-https gnupg lsb-release -y
 
 wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
@@ -30,7 +30,7 @@ sudo apt-get install trivy -y
 ## Installation de Docker
 Utiliser les commandes ci-dessous pour installer Docker sur la VM :
 
-```bash
+```shell
 sudo apt-get update
 
 sudo apt-get install docker.io -y 
