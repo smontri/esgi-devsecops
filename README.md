@@ -17,3 +17,5 @@ Les templates AWS ou Azure sont disponibles pour déployer la VM utilisée pour 
 # Exercice 3 - Analyse de vulnérabilité
 
 # Exercice - Pipeline DevSecOps
+
+![](./image/architecture.jpg)
