@@ -10,11 +10,23 @@ Les templates AWS ou Azure sont disponibles pour déployer la VM utilisée pour 
 ## Azure
 [Fichiers Terraform pour Azure](./terraform/azure)
 
-# Installation de Trivy
+# Configuration de la VM
 
+## Installation de Trivy
+Utiliser les commandes ci-dessous pour installer Trivy
 
+``
 
-# Exercice 3 - Analyse de vulnérabilité
+## Installation de Docker
+Utiliser les commandes ci-dessous pour installer Docker sur la VM :
+
+```bash
+sudo apt-get update
+sudo apt-get install docker.io -y 
+sudo usermod -aG docker $USER 
+newgrp docker 
+sudo chmod 777 /var/run/docker.sock
+```
 
 # Exercice - Pipeline DevSecOps
 
