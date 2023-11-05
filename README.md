@@ -18,4 +18,6 @@ Les templates AWS ou Azure sont disponibles pour déployer la VM utilisée pour 
 
 # Exercice - Pipeline DevSecOps
 
-![](./image/architecture.jpg)
+Les composants suivants sont déployés et utilisés pour illuster un pipeline DevSecOps.
+
+![](./images/architecture.jpg)
