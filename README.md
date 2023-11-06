@@ -285,4 +285,4 @@ Pour effectuer cette analyse, on s'appuie sur un plugin Jenkins `OWASP Dependenc
 
 A installer via Manage Jenkins -> Plugins
 
-![](./images/dp-config.jpg)
+![](./images/jenkins-owasp.jpg)
