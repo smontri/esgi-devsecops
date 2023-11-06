@@ -281,8 +281,36 @@ Et vous pouvez consulter le résultat de l'analyse SonarQube dans la console :
 
 ### Etape 3 - Analyse des dépendances OWASP
 
-Pour effectuer cette analyse, on s'appuie sur un plugin Jenkins `OWASP Dependency check`.
+* Pour effectuer cette analyse, on s'appuie sur un plugin Jenkins `OWASP Dependency check`.
 
 A installer via Manage Jenkins -> Plugins
 
 ![](./images/jenkins-owasp.jpg)
+
+* Pour configurer l'outil dans Jenkins, Manage Jenkins -> Tools
+
+![](./images/dp-config.jpg)
+
+Ajout de l'étape dans le pipeline, , à ajouter en fin de liste des `stages`
+
+```
+stage ('Build war file'){
+            steps{
+                sh 'mvn clean install -DskipTests=true'
+            }
+        }
+        stage("OWASP Dependency Check"){
+            steps{
+                dependencyCheck additionalArguments: '--scan ./ --format XML ', odcInstallation: 'DP-Check'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+```
+
+Le pipeline doit, à présent, ressembler à ceci :
+
+![](./images/Job3.jpg)
+
+Et pour visualiser le résultat de check des dépendances :
+
+![](./images/dp-results.jpg)
