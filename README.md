@@ -145,9 +145,50 @@ Voici la console de SonarQube :
 
 ![](./images/pipeline 1.jpg)
 
-#### Plugins à installer
+#### Installation de plugins (installation sans redémarrage)
 
-👉 Eclipse Temurin Installer (Install without restart)
+👉 Eclipse Temurin Installer 
 
-👉 SonarQube Scanner (Install without restart)
+👉 SonarQube Scanner
 
+#### Configuration des plugins
+
+![](./images/jdk-maven.jpg)
+
+#### Création du job
+
+Créer un item dans Jenkins de type `Pipeline` que vous pouvez nommer `petstore`
+
+![](./images/newitem.jpg)
+
+```jenkinsfile
+pipeline{
+    agent any
+    tools {
+        jdk 'jdk17'
+        maven 'maven3'
+    }
+    stages{
+        stage ('clean Workspace'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage ('checkout scm') {
+            steps {
+                git 'https://github.com/smontri/jpetstore-6.git'
+            }
+        }
+        stage ('maven compile') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+        stage ('maven Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+   }
+}
+```
