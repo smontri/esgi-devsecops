@@ -273,7 +273,7 @@ stage("Sonarqube Analysis "){
 
 Le pipeline doit, à présent, ressembler à ceci :
 
-![](./images/job2.jpg)
+![](./images/Job2.jpg)
 
 Et vous pouvez consulter le résultat de l'analyse SonarQube dans la console :
 
