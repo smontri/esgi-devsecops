@@ -161,6 +161,8 @@ Créer un item dans Jenkins de type `Pipeline` que vous pouvez nommer `petstore`
 
 ![](./images/newitem.jpg)
 
+Et utiliser le code ci-dessous pour définir le pipeline ;
+
 ```jenkinsfile
 pipeline{
     agent any
@@ -192,3 +194,34 @@ pipeline{
    }
 }
 ```
+
+> Attention à bien utiliser le fork du repo `jpetstore-6`, que vous avez fait avant de démarrer, dans le stage `checkout scm`.
+
+
+### Etape 2 - Analyse SonarQube
+
+#### Création d'une token 
+
+Il s'agit de créer une token pour l'utilisateur SonarQube qui sera utilisée par Jenkins pour invoquer SonarQube dans le pipeline.
+
+![](./images/sonar-token.jpg)
+
+Cette token doit ensuite être utilisée pour configurer les credentials Sonar dans Jenkins.
+
+![](./images/sonar-token-jenkins.jpg)
+
+> **ID** = sonar-token
+> 
+> **Description** = sonar-token
+
+#### Configuration du serveur Sonar
+
+Dans Jenkins - Manage Jenkins -> System, configurer le serveur SonarQube comme ci-dessous.
+
+![](./images/sonar-server-jenkins.jpg)
+
+#### Configuration du scanner Sonar
+
+Dans Jenkins - Manage Jenkins -> Tools, ajouter un scanner pour SonarQube
+
+![](./images/sonar-scanner-jenkins.jpg)
