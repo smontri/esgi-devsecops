@@ -109,11 +109,11 @@ Pour modifier le port de Jenkins, il s'agit de modifier des fichiers de configur
 
 #### Créer un utilisateur admin
 
-![](./images/jenkins2.jpg)
+![](./images/Jenkins2.jpg)
 
 #### Bravo vous êtes connecté à Jenkins !
 
-![](./images/jenkins3.jpg)
+![](./images/Jenkins3.jpg)
 
 ## Installation de SonarQube
 
