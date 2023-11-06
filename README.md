@@ -284,3 +284,5 @@ Et vous pouvez consulter le résultat de l'analyse SonarQube dans la console :
 Pour effectuer cette analyse, on s'appuie sur un plugin Jenkins `OWASP Dependency check`.
 
 A installer via Manage Jenkins -> Plugins
+
+![](./images/dp-config.jpg)
