@@ -349,23 +349,25 @@ stage ('Build and push to docker hub'){
                 script{
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                         sh "docker build -t petshop ."
-                        sh "docker tag petshop sevenajay/petshop:latest"
-                        sh "docker push sevenajay/petshop:latest"
+                        sh "docker tag petshop <dockerhub username>/petshop:latest"
+                        sh "docker push <dockerhub username>/petshop:${env.BUILD_ID}"
                    }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image sevenajay/petshop:latest > trivy.txt"
+                sh "trivy image smontri/petshop:latest > trivy.txt"
             }
         }
         stage ('Deploy to container'){
             steps{
-                sh 'docker run -d --name pet1 -p 8080:8080 sevenajay/petshop:latest'
+                sh 'docker run -d --name pet1 -p 8080:8080 <dockerhub username>/petshop:${env.BUILD_ID}'
             }
         }
 ```
+
+> Remplacer la valeur <dockerhub username> par votre nom d'utilisateur Docker Hub
 
 Le pipeline doit, à présent, ressembler à ceci :
 
@@ -384,3 +386,5 @@ Le pipeline doit, à présent, ressembler à ceci :
 L'application est accessible via l'URL suivante : `http://<IP publique de la VM>:8080/jpetstore`
 
 ![](./images/jpetstore.jpg)
+
+> Question : sur quel composant tourne l'application en l'état actuel
