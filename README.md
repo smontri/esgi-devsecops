@@ -105,15 +105,15 @@ Pour modifier le port de Jenkins, il s'agit de modifier des fichiers de configur
 
 #### Installer les plugins suggérés :
 
-![](./images/jenkins 1.png)
+![](./images/jenkins1.png)
 
 #### Créer un utilisateur admin
 
-![](./images/jenkins 2.jpg)
+![](./images/jenkins2.jpg)
 
 #### Bravo vous êtes connecté à Jenkins !
 
-![](./images/jenkins 3.jpg)
+![](./images/jenkins3.jpg)
 
 ## Installation de SonarQube
 
@@ -137,13 +137,13 @@ Les credentials à utiliser pour la première connexion sont `admin/admin`.
 
 Voici la console de SonarQube :
 
-![](./images/sonarqube 1.jpg)
+![](./images/sonarqube1.jpg)
 
 ## Défintion des étapes du pipeline
 
 ### Etape 1 - Maven
 
-![](./images/pipeline 1.jpg)
+![](./images/pipeline1.jpg)
 
 #### Installation de plugins (installation sans redémarrage)
 
@@ -273,7 +273,7 @@ stage("Sonarqube Analysis "){
 
 Le pipeline doit, à présent, ressembler à ceci :
 
-![](./images/job 2.jpg)
+![](./images/job2.jpg)
 
 Et vous pouvez consulter le résultat de l'analyse SonarQube dans la console :
 
