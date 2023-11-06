@@ -225,3 +225,53 @@ Dans Jenkins - Manage Jenkins -> System, configurer le serveur SonarQube comme c
 Dans Jenkins - Manage Jenkins -> Tools, ajouter un scanner pour SonarQube
 
 ![](./images/sonar-scanner-jenkins.jpg)
+
+#### Ajout d'une quality gate dans SonarQube
+
+Il s'agit de configurer un webhook dans SonarQube pour récupérer les informations dans la console Jenkins.
+
+Depuis la console SonarQube :
+
+![](./images/sonar-webhook.jpg)
+
+**Name** : `Jenkins`
+
+**URL** : `<http://IP Jenkins:8090>/sonarqube-webhook/`
+
+#### Modification de la définition du pipeline
+
+Nous allons ajouter 2 étapes au pipeline ainsi que des informations d'environnement pour l'utilisation du scanner SonarQube.
+
+* Environnement du scanner, à ajouter sous la section `tools`
+ 
+```
+environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+```
+
+* Ajout des étapes du pipeline, à ajouter en fin de liste des `stages`
+
+```
+stage("Sonarqube Analysis "){
+            steps{
+                withSonarQubeEnv('sonar-server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Petshop \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=Petshop '''
+                }
+            }
+        }
+        stage("quality gate"){
+            steps {
+                script {
+                  waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-token' 
+                }
+           }
+        }
+```
+
+Le pipeline doit, à présent, ressembler à ceci :
+
+![](./images/job 2.jpg)
+
