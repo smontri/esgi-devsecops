@@ -141,5 +141,13 @@ Voici la console de SonarQube :
 
 ## Défintion des étapes du pipeline
 
-### Compilation
+### Etape 1 - Maven
+
+![](./images/pipeline 1.jpg)
+
+#### Plugins à installer
+
+👉 Eclipse Temurin Installer (Install without restart)
+
+👉 SonarQube Scanner (Install without restart)
 
