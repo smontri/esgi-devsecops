@@ -12,6 +12,8 @@ Les templates AWS ou Azure sont disponibles pour déployer la VM utilisée pour 
 
 # Configuration de la VM
 
+La VM utilisée pour les outils CI/CD 
+
 ## Installation de Trivy
 Utiliser les commandes ci-dessous pour installer Trivy
 
@@ -92,3 +94,26 @@ Pour modifier le port de Jenkins, il s'agit de modifier des fichiers de configur
 5. Redémarrer le daemon systemctl : `sudo systemctl daemon-reload`
 6. Redémarrer le service Jenkins : `sudo systemctl restart jenkins`
 7. Vérifier que Jenkins est bien démarré : `sudo systemctl status jenkins`
+
+### Première connexion à Jenkins
+
+#### Pour se connecter à Jenkins, ouvir l'URL : `http://<IP publique de la VM>:8090`
+
+#### Récupérer le mot de passe admin : `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+
+#### Installer les plugins suggérés :
+
+![](./images/jenkins 1.png)
+
+#### Créer un utilisateur admin
+
+![](./images/jenkins 2.jpg)
+
+#### Bravo vous êtes connecté à Jenkins !
+
+![](./images/jenkins 3.jpg)
+
+## Ajout de plugins Jenkins
+
+Nous allons avoir besoin d'un certain nombre de plugins pour exécuter ce pipeline DevSecOps
+
