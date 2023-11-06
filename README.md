@@ -275,3 +275,12 @@ Le pipeline doit, à présent, ressembler à ceci :
 
 ![](./images/job 2.jpg)
 
+Et vous pouvez consulter le résultat de l'analyse SonarQube dans la console :
+
+![](./images/sonar-results.jpg)
+
+### Etape 3 - Analyse des dépendances OWASP
+
+Pour effectuer cette analyse, on s'appuie sur un plugin Jenkins `OWASP Dependency check`.
+
+A installer via Manage Jenkins -> Plugins
