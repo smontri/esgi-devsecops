@@ -372,8 +372,15 @@ Le pipeline doit, à présent, ressembler à ceci :
 ![](./images/Job4.jpg)
 
 > On peut y voir également un graphe de tendances de l'analyse des dépendances
-> Et l'étape d'analyse de vulnérabilités par Trivy
+
+> Et l'étape d'analyse de vulnérabilités par **Trivy**
 
 #### Image chargée dans le Docker Hub
 
 ![](./images/dockerhub.jpg)
+
+#### Accès à l'application
+
+L'application est accessible via l'URL suivante : `http://<IP publique de la VM>:8080/jpetstore`
+
+![](./images/jpetstore.jpg)
