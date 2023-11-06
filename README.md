@@ -291,7 +291,7 @@ A installer via Manage Jenkins -> Plugins
 
 ![](./images/dp-config.jpg)
 
-Ajout de l'étape dans le pipeline, , à ajouter en fin de liste des `stages`
+* Ajout de l'étape dans le pipeline, , à ajouter en fin de liste des `stages`
 
 ```
 stage ('Build war file'){
@@ -314,3 +314,66 @@ Le pipeline doit, à présent, ressembler à ceci :
 Et pour visualiser le résultat de check des dépendances :
 
 ![](./images/dp-results.jpg)
+
+### Etape 4 - Build de l'image Docker et push vers une registry
+
+#### Ajout des plugins Docker
+
+Il s'agit d'ajouter les plugins suivants :
+
+* `Docker`
+* `Docker Commons`
+* `Docker Pipeline`
+* `Docker API`
+* `docker-build-step`
+
+![](./images/docker-plugins.jpg)
+
+#### Configuration du plugin Docker dans Jenkins
+
+![](./images/docker-config.jpg)
+
+#### Ajout des credentials pour Docker Hub
+
+> Il s'agit de votre compte Docker Hub à renseigner
+
+![](./images/docker-creds.jpg)
+
+#### Ajout des étapes Docker dans le pipeline
+
+> A ajouter en fin de liste des `stages`
+
+```
+stage ('Build and push to docker hub'){
+            steps{
+                script{
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                        sh "docker build -t petshop ."
+                        sh "docker tag petshop sevenajay/petshop:latest"
+                        sh "docker push sevenajay/petshop:latest"
+                   }
+                }
+            }
+        }
+        stage("TRIVY"){
+            steps{
+                sh "trivy image sevenajay/petshop:latest > trivy.txt"
+            }
+        }
+        stage ('Deploy to container'){
+            steps{
+                sh 'docker run -d --name pet1 -p 8080:8080 sevenajay/petshop:latest'
+            }
+        }
+```
+
+Le pipeline doit, à présent, ressembler à ceci :
+
+![](./images/Job4.jpg)
+
+> On peut y voir également un graphe de tendances de l'analyse des dépendances
+> Et l'étape d'analyse de vulnérabilités par Trivy
+
+#### Image chargée dans le Docker Hub
+
+![](./images/dockerhub.jpg)
