@@ -97,9 +97,11 @@ Pour modifier le port de Jenkins, il s'agit de modifier des fichiers de configur
 
 ### Première connexion à Jenkins
 
-#### Pour se connecter à Jenkins, ouvir l'URL : `http://<IP publique de la VM>:8090`
+#### Pour se connecter à Jenkins, ouvir l'URL : 
+`http://<IP publique de la VM>:8090`
 
-#### Récupérer le mot de passe admin : `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+#### Récupérer le mot de passe admin : 
+`sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 #### Installer les plugins suggérés :
 
@@ -113,7 +115,31 @@ Pour modifier le port de Jenkins, il s'agit de modifier des fichiers de configur
 
 ![](./images/jenkins 3.jpg)
 
-## Ajout de plugins Jenkins
+## Installation de SonarQube
 
-Nous allons avoir besoin d'un certain nombre de plugins pour exécuter ce pipeline DevSecOps
+SonarQube est un outil SAST qui permet l'analyse de sécurité du code. SonarQube est exécutée sous forme de conteneur.
+
+```shell
+docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+```
+
+Une fois le conteneur déployé, vérifier qu'il est bien démarré et en état running
+
+![](./images/docker-sonarqube.jpg)
+
+### Connnexion à SonarQube
+
+`http://<IP publique de la VM>:9000`
+
+Les credentials à utiliser pour la première connexion sont `admin/admin`.
+
+> SonarQube vous demande de modifier le mot de passe admin
+
+Voici la console de SonarQube :
+
+![](./images/sonarqube 1.jpg)
+
+## Défintion des étapes du pipeline
+
+### Compilation
 
