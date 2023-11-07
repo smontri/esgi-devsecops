@@ -388,3 +388,22 @@ L'application est accessible via l'URL suivante : `http://<IP publique de la VM>
 ![](./images/jpetstore.jpg)
 
 > Question : sur quel composant tourne l'application en l'état actuel
+
+### Etape 5 - Déploiement ver Kubernetes
+
+A présent, nous allons déployer l'application vers un cluster Kubernetes
+
+#### Configuration Kubernetes
+
+* Installer les plugins suivants dans Jenkins
+
+![](./images/kubernetes-plugins.jpg)
+
+* Ajout des credentials Kubernetes
+
+![](./images/k8s-creds.jpg)
+
+#### Installation de la CLI Kubernetes
+
+
+
