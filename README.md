@@ -350,7 +350,7 @@ stage ('Build and push to docker hub'){
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                         sh "docker build -t petshop ."
                         sh "docker tag petshop <dockerhub username>/petshop:latest"
-                        sh "docker push <dockerhub username>/petshop:${env.BUILD_ID}"
+                        sh "docker push <dockerhub username>/petshop:latest"
                    }
                 }
             }
@@ -362,7 +362,7 @@ stage ('Build and push to docker hub'){
         }
         stage ('Deploy to container'){
             steps{
-                sh 'docker run -d --name pet1 -p 8080:8080 <dockerhub username>/petshop:${env.BUILD_ID}'
+                sh 'docker run -d --name pet1 -p 8080:8080 <dockerhub username>/petshop:latest'
             }
         }
 ```
