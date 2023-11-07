@@ -403,7 +403,21 @@ A présent, nous allons déployer l'application vers un cluster Kubernetes
 
 ![](./images/k8s-creds.jpg)
 
-#### Installation de la CLI Kubernetes
+* Ajout du stage de déploiement de Kubernetes
+
+> Créer un namespace avec le numéro du goupe (ex. groupe1) pour déployer votre application dans le namespace correspondant
 
 
+```
+stage('K8s'){
+            steps{
+                script{
+                    withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                        sh 'kubectl create ns <votre namespace>'
+                        sh 'kubectl apply -f deployment.yaml -n <votre namespace>'
+                    }
+                }
+            }
+        }
+```
 
