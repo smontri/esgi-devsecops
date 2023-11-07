@@ -395,6 +395,8 @@ A présent, nous allons déployer l'application vers un cluster Kubernetes
 
 #### Configuration Kubernetes
 
+* Me demander le fichier de configuration Kubernetes
+
 * Installer les plugins suivants dans Jenkins
 
 ![](./images/kubernetes-plugins.jpg)
