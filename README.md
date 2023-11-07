@@ -405,6 +405,16 @@ A présent, nous allons déployer l'application vers un cluster Kubernetes
 
 ![](./images/k8s-creds.jpg)
 
+* Installation commande kubectl
+
+```
+sudo apt update
+sudo apt install curl
+curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+kubectl version --client
+```
+
 * Ajout du stage de déploiement de Kubernetes
 
 > Créer un namespace avec le numéro du goupe (ex. groupe1) pour déployer votre application dans le namespace correspondant
