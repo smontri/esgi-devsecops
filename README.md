@@ -1,20 +1,15 @@
-# ESGI-DevSecOps
-Ce repository content les artifacts du cours DevSecOps pour l'ESGI
+---
+description: Ce repository content les artifacts du cours DevSecOps pour l'ESGI
+---
 
-# Templates Terraform
-Les templates AWS ou Azure sont disponibles pour déployer la VM utilisée pour les outils nécessaires à la pratique DevSecOps.
+# DevSecOps @ ESGI
 
-## AWS
-[Fichiers Terraform pour AWS](./terraform/aws)
+## Configuration de la VM
 
-## Azure
-[Fichiers Terraform pour Azure](./terraform/azure)
+La VM utilisée pour les outils CI/CD
 
-# Configuration de la VM
+### Installation de Trivy
 
-La VM utilisée pour les outils CI/CD 
-
-## Installation de Trivy
 Utiliser les commandes ci-dessous pour installer Trivy
 
 ```shell
@@ -29,7 +24,8 @@ sudo apt-get update
 sudo apt-get install trivy -y
 ```
 
-## Installation de Docker
+### Installation de Docker
+
 Utiliser les commandes ci-dessous pour installer Docker sur la VM :
 
 ```shell
@@ -44,17 +40,17 @@ newgrp docker
 sudo chmod 777 /var/run/docker.sock
 ```
 
-# Exercice - Pipeline DevSecOps
+## Exercice - Pipeline DevSecOps
 
 Les composants suivants sont déployés et utilisés pour illuster un pipeline DevSecOps.
 
-![](./images/architecture.jpg)
+![](images/architecture.jpg)
 
-## Installation de Jenkins
+### Installation de Jenkins
 
 L'installation se fait avec les commandes ci-dessous. Celles-ci sont regroupées dans le fichier `jenkins.sh`.
 
-### Créer le fichier `jenkins.sh` et y insérer le code ci-dessous.
+#### Créer le fichier `jenkins.sh` et y insérer le code ci-dessous.
 
 ```shell
 #!/bin/bash
@@ -76,15 +72,16 @@ sudo systemctl start jenkins
 sudo systemctl status jenkins
 ```
 
-### Exécuter l'installation
+#### Exécuter l'installation
 
 ```shell
 sudo chmod 777 jenkins.sh 
 ./jenkins.sh
 ```
+
 > Le port utilisé par défaut par Jenkins est le 8080, dans le cadre de cet exercice, nous allons le changer pour le port 8090 car l'application sera exposée sur le port 8080
 
-### Modification du port Jenkins
+#### Modification du port Jenkins
 
 Pour modifier le port de Jenkins, il s'agit de modifier des fichiers de configuration dans les fichiers `/etc/default/jenkins` et `/lib/systemd/system/jenkins.service`.
 
@@ -96,27 +93,29 @@ Pour modifier le port de Jenkins, il s'agit de modifier des fichiers de configur
 6. Redémarrer le service Jenkins : `sudo systemctl restart jenkins`
 7. Vérifier que Jenkins est bien démarré : `sudo systemctl status jenkins`
 
-### Première connexion à Jenkins
+#### Première connexion à Jenkins
 
-#### Pour se connecter à Jenkins, ouvir l'URL : 
+**Pour se connecter à Jenkins, ouvir l'URL :**
+
 `http://<IP publique de la VM>:8090`
 
-#### Récupérer le mot de passe admin : 
+**Récupérer le mot de passe admin :**
+
 `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 
-#### Installer les plugins suggérés :
+**Installer les plugins suggérés :**
 
-![](./images/jenkins1.png)
+![](images/jenkins1.png)
 
-#### Créer un utilisateur admin
+**Créer un utilisateur admin**
 
-![](./images/Jenkins2.jpg)
+![](images/Jenkins2.jpg)
 
-#### Bravo vous êtes connecté à Jenkins !
+**Bravo vous êtes connecté à Jenkins !**
 
-![](./images/Jenkins3.jpg)
+![](images/Jenkins3.jpg)
 
-## Installation de SonarQube
+### Installation de SonarQube
 
 SonarQube est un outil SAST qui permet l'analyse de sécurité du code. SonarQube est exécutée sous forme de conteneur.
 
@@ -126,9 +125,9 @@ docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 
 Une fois le conteneur déployé, vérifier qu'il est bien démarré et en état running
 
-![](./images/docker-sonarqube.jpg)
+![](images/docker-sonarqube.jpg)
 
-### Connnexion à SonarQube
+#### Connnexion à SonarQube
 
 `http://<IP publique de la VM>:9000`
 
@@ -138,29 +137,29 @@ Les credentials à utiliser pour la première connexion sont `admin/admin`.
 
 Voici la console de SonarQube :
 
-![](./images/sonarqube1.jpg)
+![](images/sonarqube1.jpg)
 
-## Défintion des étapes du pipeline
+### Défintion des étapes du pipeline
 
-### Etape 1 - Maven
+#### Etape 1 - Maven
 
-![](./images/pipeline1.jpg)
+![](images/pipeline1.jpg)
 
-#### Installation de plugins (installation sans redémarrage)
+**Installation de plugins (installation sans redémarrage)**
 
-👉 Eclipse Temurin Installer 
+👉 Eclipse Temurin Installer
 
 👉 SonarQube Scanner
 
-#### Configuration des plugins
+**Configuration des plugins**
 
-![](./images/jdk-maven.jpg)
+![](images/jdk-maven.jpg)
 
-#### Création du job
+**Création du job**
 
 Créer un item dans Jenkins de type `Pipeline` que vous pouvez nommer `petstore`
 
-![](./images/newitem.jpg)
+![](images/newitem.jpg)
 
 Et utiliser le code ci-dessous pour définir le pipeline ;
 
@@ -198,53 +197,52 @@ pipeline{
 
 > Attention à bien utiliser le fork du repo `jpetstore-6`, que vous avez fait avant de démarrer, dans le stage `checkout scm`.
 
+#### Etape 2 - Analyse SonarQube
 
-### Etape 2 - Analyse SonarQube
-
-#### Création d'une token 
+**Création d'une token**
 
 Il s'agit de créer une token pour l'utilisateur SonarQube qui sera utilisée par Jenkins pour invoquer SonarQube dans le pipeline.
 
-![](./images/sonar-token.jpg)
+![](images/sonar-token.jpg)
 
 Cette token doit ensuite être utilisée pour configurer les credentials Sonar dans Jenkins.
 
-![](./images/sonar-token-jenkins.jpg)
+![](images/sonar-token-jenkins.jpg)
 
 > **ID** = sonar-token
-> 
+>
 > **Description** = sonar-token
 
-#### Configuration du serveur Sonar
+**Configuration du serveur Sonar**
 
 Dans Jenkins - Manage Jenkins -> System, configurer le serveur SonarQube comme ci-dessous.
 
-![](./images/sonar-server-jenkins.jpg)
+![](images/sonar-server-jenkins.jpg)
 
-#### Configuration du scanner Sonar
+**Configuration du scanner Sonar**
 
 Dans Jenkins - Manage Jenkins -> Tools, ajouter un scanner pour SonarQube
 
-![](./images/sonar-scanner-jenkins.jpg)
+![](images/sonar-scanner-jenkins.jpg)
 
-#### Ajout d'une quality gate dans SonarQube
+**Ajout d'une quality gate dans SonarQube**
 
 Il s'agit de configurer un webhook dans SonarQube pour récupérer les informations dans la console Jenkins.
 
 Depuis la console SonarQube :
 
-![](./images/sonar-webhook.jpg)
+![](images/sonar-webhook.jpg)
 
 **Name** : `Jenkins`
 
 **URL** : `<http://IP Jenkins:8090>/sonarqube-webhook/`
 
-#### Modification de la définition du pipeline
+**Modification de la définition du pipeline**
 
 Nous allons ajouter 2 étapes au pipeline ainsi que des informations d'environnement pour l'utilisation du scanner SonarQube.
 
 * Environnement du scanner, à ajouter sous la section `tools`
- 
+
 ```
 environment {
         SCANNER_HOME=tool 'sonar-scanner'
@@ -274,23 +272,23 @@ stage("Sonarqube Analysis "){
 
 Le pipeline doit, à présent, ressembler à ceci :
 
-![](./images/Job2.jpg)
+![](images/Job2.jpg)
 
 Et vous pouvez consulter le résultat de l'analyse SonarQube dans la console :
 
-![](./images/sonar-results.jpg)
+![](images/sonar-results.jpg)
 
-### Etape 3 - Analyse des dépendances OWASP
+#### Etape 3 - Analyse des dépendances OWASP
 
 * Pour effectuer cette analyse, on s'appuie sur un plugin Jenkins `OWASP Dependency check`.
 
 A installer via Manage Jenkins -> Plugins
 
-![](./images/jenkins-owasp.jpg)
+![](images/jenkins-owasp.jpg)
 
 * Pour configurer l'outil dans Jenkins, Manage Jenkins -> Tools
 
-![](./images/dp-config.jpg)
+![](images/dp-config.jpg)
 
 * Ajout de l'étape dans le pipeline, , à ajouter en fin de liste des `stages`
 
@@ -310,15 +308,15 @@ stage ('Build war file'){
 
 Le pipeline doit, à présent, ressembler à ceci :
 
-![](./images/Job3.jpg)
+![](images/Job3.jpg)
 
 Et pour visualiser le résultat de check des dépendances :
 
-![](./images/dp-results.jpg)
+![](images/dp-results.jpg)
 
-### Etape 4 - Build de l'image Docker et push vers une registry
+#### Etape 4 - Build de l'image Docker et push vers une registry
 
-#### Ajout des plugins Docker
+**Ajout des plugins Docker**
 
 Il s'agit d'ajouter les plugins suivants :
 
@@ -328,19 +326,19 @@ Il s'agit d'ajouter les plugins suivants :
 * `Docker API`
 * `docker-build-step`
 
-![](./images/docker-plugins.jpg)
+![](images/docker-plugins.jpg)
 
-#### Configuration du plugin Docker dans Jenkins
+**Configuration du plugin Docker dans Jenkins**
 
-![](./images/docker-config.jpg)
+![](images/docker-config.jpg)
 
-#### Ajout des credentials pour Docker Hub
+**Ajout des credentials pour Docker Hub**
 
 > Il s'agit de votre compte Docker Hub à renseigner
 
-![](./images/docker-creds.jpg)
+![](images/docker-creds.jpg)
 
-#### Ajout des étapes Docker dans le pipeline
+**Ajout des étapes Docker dans le pipeline**
 
 > A ajouter en fin de liste des `stages`
 
@@ -368,43 +366,42 @@ stage ('Build and push to docker hub'){
         }
 ```
 
-> Remplacer la valeur <dockerhub username> par votre nom d'utilisateur Docker Hub
+> Remplacer la valeur par votre nom d'utilisateur Docker Hub
 
 Le pipeline doit, à présent, ressembler à ceci :
 
-![](./images/Job4.jpg)
+![](images/Job4.jpg)
 
 > On peut y voir également un graphe de tendances de l'analyse des dépendances
 
 > Et l'étape d'analyse de vulnérabilités par **Trivy**
 
-#### Image chargée dans le Docker Hub
+**Image chargée dans le Docker Hub**
 
-![](./images/dockerhub.jpg)
+![](images/dockerhub.jpg)
 
-#### Accès à l'application
+**Accès à l'application**
 
 L'application est accessible via l'URL suivante : `http://<IP publique de la VM>:8080/jpetstore`
 
-![](./images/jpetstore.jpg)
+![](images/jpetstore.jpg)
 
 > Question : sur quel composant tourne l'application en l'état actuel
 
-### Etape 5 - Déploiement ver Kubernetes
+#### Etape 5 - Déploiement ver Kubernetes
 
 A présent, nous allons déployer l'application vers un cluster Kubernetes
 
-#### Configuration Kubernetes
+**Configuration Kubernetes**
 
 * Me demander le fichier de configuration Kubernetes
-
 * Installer les plugins suivants dans Jenkins
 
-![](./images/kubernetes-plugins.jpg)
+![](images/kubernetes-plugins.jpg)
 
 * Ajout des credentials Kubernetes
 
-![](./images/k8s-creds.jpg)
+![](images/k8s-creds.jpg)
 
 * Installation commande kubectl
 
@@ -420,7 +417,6 @@ kubectl version --client
 
 > Créer un namespace avec le numéro du goupe (ex. groupe1) pour déployer votre application dans le namespace correspondant
 
-
 ```
 stage('K8s'){
             steps{
@@ -433,4 +429,3 @@ stage('K8s'){
             }
         }
 ```
-
