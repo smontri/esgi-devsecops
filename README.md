@@ -2,33 +2,7 @@
 description: Ce repository content les artifacts du cours DevSecOps pour l'ESGI
 ---
 
-# DevSecOps @ ESGI
-
-
-
-### Installation de SonarQube
-
-SonarQube est un outil SAST qui permet l'analyse de sécurité du code. SonarQube est exécutée sous forme de conteneur.
-
-```shell
-docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
-```
-
-Une fois le conteneur déployé, vérifier qu'il est bien démarré et en état running
-
-![](images/docker-sonarqube.jpg)
-
-#### Connnexion à SonarQube
-
-`http://<IP publique de la VM>:9000`
-
-Les credentials à utiliser pour la première connexion sont `admin/admin`.
-
-> SonarQube vous demande de modifier le mot de passe admin
-
-Voici la console de SonarQube :
-
-![](images/sonarqube1.jpg)
+# Préambule
 
 ### Défintion des étapes du pipeline
 
