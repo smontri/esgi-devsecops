@@ -4,7 +4,7 @@ description: Les outils CI/CD sont déployés sur cette VM
 
 # Configuration de la VM
 
-### Installation de Trivy
+## Installation de Trivy
 
 Utiliser les commandes ci-dessous pour installer Trivy
 
@@ -20,7 +20,7 @@ sudo apt-get update
 sudo apt-get install trivy -y
 ```
 
-### Installation de Docker
+## Installation de Docker
 
 Utiliser les commandes ci-dessous pour installer Docker sur la VM :
 
