@@ -1,8 +1,4 @@
----
-description: Les outils CI/CD sont déployés sur cette VM
----
-
-# Configuration de la VM
+# Trivy
 
 ## Installation de Trivy
 
@@ -18,20 +14,4 @@ echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.
 sudo apt-get update
 
 sudo apt-get install trivy -y
-```
-
-## Installation de Docker
-
-Utiliser les commandes ci-dessous pour installer Docker sur la VM :
-
-```shell
-sudo apt-get update
-
-sudo apt-get install docker.io -y 
-
-sudo usermod -aG docker $USER 
-
-newgrp docker 
-
-sudo chmod 777 /var/run/docker.sock
 ```

@@ -1,8 +1,8 @@
 # Installation de Jenkins
 
-L'installation se fait avec les commandes ci-dessous. Celles-ci sont regroupées dans le fichier `jenkins.sh`.
+L'installation de Jenkins se fait avec les commandes ci-dessous. Celles-ci sont regroupées dans le fichier `jenkins.sh`.
 
-#### Créer le fichier `jenkins.sh` et y insérer le code ci-dessous.
+## Créer le fichier `jenkins.sh` et y insérer le code ci-dessous.
 
 ```shell
 #!/bin/bash
@@ -24,45 +24,50 @@ sudo systemctl start jenkins
 sudo systemctl status jenkins
 ```
 
-#### Exécuter l'installation
+## Exécuter l'installation
 
 ```shell
 sudo chmod 777 jenkins.sh 
 ./jenkins.sh
 ```
 
-> Le port utilisé par défaut par Jenkins est le 8080, dans le cadre de cet exercice, nous allons le changer pour le port 8090 car l'application sera exposée sur le port 8080
+> Le port utilisé par défaut par Jenkins est le 8080, dans le cadre de cet exercice, nous allons le changer pour le port 8090 car l'application finale sera exposée sur le port 8080
 
-#### Modification du port Jenkins
+## Modification du port Jenkins
 
-Pour modifier le port de Jenkins, il s'agit de modifier des fichiers de configuration dans les fichiers `/etc/default/jenkins` et `/lib/systemd/system/jenkins.service`.
+Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configuration suivants :
+
+* `/etc/default/jenkins`&#x20;
+* `/lib/systemd/system/jenkins.service`
 
 1. Arrêter le service Jenkins : `sudo systemctl stop jenkins`
 2. Vérifier que Jenkins est bien arrêté : `sudo systemctl status jenkins`
-3. Modifier la valeur de la ligne `HTTP_PORT=` à 8090 dans `/etc/default/jenkins`
-4. Modifier la valeur du port `Environments="Jenkins_port=` à 8090 dans /`lib/systemd/system/jenkins.service`
+3. Dans le fichier `/etc/default/jenkins`Modifier la valeur de la ligne `HTTP_PORT=` à <mark style="color:red;">8090</mark>&#x20;
+4. Dans le fichier /`lib/systemd/system/jenkins.service` modifier la valeur du port `Environments="Jenkins_port=` à <mark style="color:red;">8090</mark> &#x20;
 5. Redémarrer le daemon systemctl : `sudo systemctl daemon-reload`
 6. Redémarrer le service Jenkins : `sudo systemctl restart jenkins`
 7. Vérifier que Jenkins est bien démarré : `sudo systemctl status jenkins`
 
-#### Première connexion à Jenkins
+## Première connexion à Jenkins
 
-**Pour se connecter à Jenkins, ouvir l'URL :**
+### **Pour se connecter à Jenkins, ouvir l'URL :**
 
-`http://<IP publique de la VM>:8090`
+`http://`_<mark style="color:red;">`<IP publique de la VM>`</mark>_`:8090`
 
-**Récupérer le mot de passe admin :**
+### **Récupérer le mot de passe admin :**
+
+
 
 `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 
-**Installer les plugins suggérés :**
+### **Installer les plugins suggérés :**
 
 ![](../images/jenkins1.png)
 
-**Créer un utilisateur admin**
+### **Créer un utilisateur admin**
 
 ![](../images/Jenkins2.jpg)
 
-**Bravo vous êtes connecté à Jenkins !**
+### **Bravo vous êtes connecté à Jenkins !**
 
 ![](../images/Jenkins3.jpg)
