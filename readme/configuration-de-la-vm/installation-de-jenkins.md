@@ -62,12 +62,12 @@ Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configur
 
 ### **Installer les plugins suggérés :**
 
-![](../images/jenkins1.png)
+![](../../images/jenkins1.png)
 
 ### **Créer un utilisateur admin**
 
-![](../images/Jenkins2.jpg)
+![](../../images/Jenkins2.jpg)
 
 ### **Bravo vous êtes connecté à Jenkins !**
 
-![](../images/Jenkins3.jpg)
+![](../../images/Jenkins3.jpg)

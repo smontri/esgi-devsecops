@@ -8,7 +8,7 @@ docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 
 Une fois le conteneur déployé, vérifiez qu'il est bien démarré et en état running[^1].
 
-![Liste des conteneurs](../images/docker-sonarqube.jpg)
+![Liste des conteneurs](../../images/docker-sonarqube.jpg)
 
 #### Connnexion à SonarQube
 
@@ -20,7 +20,7 @@ Les credentials à utiliser pour la première connexion sont `admin/admin`.
 
 Voici la console de SonarQube :
 
-![](../images/sonarqube1.jpg)
+![](../../images/sonarqube1.jpg)
 
 ###
 
