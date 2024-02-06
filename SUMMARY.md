@@ -9,5 +9,5 @@
 * [Pipeline DevSecOps](exercice/README.md)
   * [Installation de Jenkins](exercice/installation-de-jenkins.md)
   * [Installation de Sonarqube](exercice/installation-de-sonarqube.md)
-  * [Page 2](exercice/page-2.md)
-  * [Page 3](exercice/page-3.md)
+  * [Plugins Jenkins](exercice/plugins-jenkins.md)
+  * [Pipeline Jenkins](exercice/pipeline-jenkins.md)
