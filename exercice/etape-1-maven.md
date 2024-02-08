@@ -8,4 +8,4 @@ Nous allons utiliser les plugins suivants pour l'exécution du pipeline Jenkins
 
 Pour ex
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>

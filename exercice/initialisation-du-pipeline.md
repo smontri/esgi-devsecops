@@ -1,21 +1,21 @@
 ---
-description: Création du pipeline avec la première étape de compilation avec Maven
+description: Création du pipeline dans Jenkins
 ---
 
 # Initialisation du pipeline
 
 {% hint style="warning" %}
 Faire un fork du repo [https://github.com/smontri/jpetstore-6.git](https://github.com/smontri/jpetstore-6.git)
+
+Le reste de l'exercice est basé sur votre fork du repo ci-dessus
 {% endhint %}
 
-## Plugin Temurin
-
-Pour exécuter le pipe
-
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+## Création du job Jenkins
 
 Créer un item dans Jenkins de type `Pipeline` que vous pouvez nommer `petstore`
 
-[![](https://github.com/smontri/esgi-devsecops/raw/main/images/newitem.jpg)](../images/newitem.jpg)
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+
 
 Et utiliser le code ci-dessous pour définir le pipeline ;
