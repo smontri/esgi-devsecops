@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Préambule](README.md)
+* [Infrastructure](<README (1).md>)
   * [Déploiement de la VM](readme/deploiement-de-la-vm.md)
   * [Accès à la VM](readme/acces-a-la-vm.md)
   * [Configuration de la VM](readme/configuration-de-la-vm/README.md)
