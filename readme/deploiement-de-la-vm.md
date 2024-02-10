@@ -14,9 +14,9 @@ Informations disponibles sur le site Hashicorp : [https://developer.hashicorp.co
 
 Faire un fork du repository ci-dessous afin d'avoir votre repository sous votre identifiant GitHub
 
-&#x20;[https://github.com/smontri/esgi-devsecops.git](https://github.com/smontri/esgi-devsecops.git)
+{% embed url="https://github.com/smontri/esgi-devsecops.git" %}
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Bouton fork depuis la page GitHub du repository
@@ -27,7 +27,7 @@ Bouton fork depuis la page GitHub du repository
 Faire un clone de votre repository sur votre poste de travail en utilisant la commande `git clone`
 
 {% hint style="danger" %}
-Attention de bien faire le clone depuis <mark style="color:red;">**VOTRE**</mark> repository
+Attention de bien cloner localement <mark style="color:red;">**VOTRE**</mark> repository
 {% endhint %}
 
 ## Templates terraform
@@ -36,9 +36,9 @@ Le répertoire terraform contient les templates AWS et Azure pour le déploiemen
 
 Dans le cadre de ce TP, nous allons utiliser AWS avec le lab mis à disposition par votre intervenant.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Déploiement avec Terraform
 
@@ -66,7 +66,7 @@ Pour cela nous allons utiliser la commande `terraform init`
 terraform init
 ```
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Planification du déploiement
 

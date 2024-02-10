@@ -2,6 +2,8 @@
 
 SonarQube est un outil SAST qui permet l'analyse de sécurité du code. SonarQube est exécuté sous forme de conteneur.
 
+## Déploiement de SonarQube
+
 ```shell
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 ```
@@ -10,13 +12,15 @@ Une fois le conteneur déployé, vérifiez qu'il est bien démarré et en état 
 
 ![Liste des conteneurs](../../images/docker-sonarqube.jpg)
 
-#### Connnexion à SonarQube
+## Connnexion à SonarQube
 
 `http://<IP publique de la VM>:9000`
 
 Les credentials à utiliser pour la première connexion sont `admin/admin`.
 
-> SonarQube vous demande de modifier le mot de passe admin
+{% hint style="info" %}
+SonarQube vous demande de modifier le mot de passe admin à la première connexion
+{% endhint %}
 
 Voici la console de SonarQube :
 
