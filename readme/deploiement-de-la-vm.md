@@ -36,7 +36,7 @@ Le répertoire terraform contient les templates AWS et Azure pour le déploiemen
 
 Dans le cadre de ce TP, nous allons utiliser AWS avec le lab mis à disposition par votre intervenant.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -54,7 +54,11 @@ Se placer dans le dossier `terraform/aws`
 
 ### Configuration de la CLI AWS
 
+Pour configurer la CLI, utiliser la commande `aws configure` en renseignant les credentials fournis par le lab AWS.
 
+{% hint style="warning" %}
+Il faut également ajouter la token dans les fichiers de configuration AWS
+{% endhint %}
 
 ### Initialisation de Terraform
 

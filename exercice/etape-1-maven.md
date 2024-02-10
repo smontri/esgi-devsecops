@@ -22,7 +22,7 @@ Pour configurer le plugin comme indiqué ci-dessous, `Manage Jenkins -> Tools`
 
 Créer un item dans Jenkins de type `Pipeline` que vous pouvez nommer `petstore`
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Et utliser le code ci-dessous pour définir le workflow du pipeline dans le bloc `Pipeline`
 

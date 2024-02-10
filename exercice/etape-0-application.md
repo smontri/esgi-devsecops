@@ -10,4 +10,4 @@ Faire un fork du repo ci-dessous :
 <mark style="color:red;">**Il s'agit d'utiliser votre fork pour tout le reste de l'exercice**</mark>
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
