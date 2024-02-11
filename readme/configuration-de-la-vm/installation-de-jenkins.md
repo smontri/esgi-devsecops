@@ -2,7 +2,9 @@
 
 L'installation de Jenkins se fait avec les commandes ci-dessous. Celles-ci sont regroupées dans le fichier `jenkins.sh`.
 
-## Créer le fichier `jenkins.sh` et y insérer le code ci-dessous.
+## Préparation de l'installation
+
+Créer un fichier `jenkins.sh` et y insérer le code ci-dessous
 
 ```shell
 #!/bin/bash
@@ -31,9 +33,9 @@ sudo chmod 777 jenkins.sh
 ./jenkins.sh
 ```
 
-> Le port utilisé par défaut par Jenkins est le 8080, dans le cadre de cet exercice, nous allons le changer pour le port 8090 car l'application finale sera exposée sur le port 8080
-
 ## Modification du port Jenkins
+
+> Le port utilisé par défaut par Jenkins est le 8080, dans le cadre de cet exercice, nous allons le changer pour le port 8090 car l'application finale sera exposée sur le port 8080
 
 Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configuration suivants :
 
@@ -55,8 +57,6 @@ Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configur
 `http://`_<mark style="color:red;">`<IP publique de la VM>`</mark>_`:8090`
 
 ### **Récupérer le mot de passe admin :**
-
-
 
 `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 

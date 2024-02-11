@@ -8,7 +8,9 @@ description: Comment déployer l'instance EC2 utilisé pour le TP
 
 Installer Terraform si celui-ci n'est pas présent sur votre poste de travail.
 
-Informations disponibles sur le site Hashicorp : [https://developer.hashicorp.com/terraform/install](https://developer.hashicorp.com/terraform/install)
+Informations disponibles sur le site Hashicorp :point\_down:
+
+{% embed url="https://developer.hashicorp.com/terraform/install" %}
 
 ## Fork du repository
 
@@ -42,22 +44,22 @@ Dans le cadre de ce TP, nous allons utiliser AWS avec le lab mis à disposition 
 
 ## Déploiement avec Terraform
 
-Pré-requis : avec les informations du lab AWS, configurer son terminal pour se connecter à AWS en CLI.
+{% hint style="warning" %}
+Se placer dans le dossier `terraform/aws`
+{% endhint %}
+
+### Installation et configuration de la CLI AWS
 
 {% hint style="info" %}
 S'assurer que la CLI AWS est bien installée sur son poste de travail
 {% endhint %}
 
-{% hint style="warning" %}
-Se placer dans le dossier `terraform/aws`
-{% endhint %}
+{% embed url="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html" %}
 
-### Configuration de la CLI AWS
-
-Pour configurer la CLI, utiliser la commande `aws configure` en renseignant les credentials fournis par le lab AWS.
+Pour configurer la CLI, utiliser la commande `aws configure` en renseignant les credentials fournis par le lab AWS
 
 {% hint style="warning" %}
-Il faut également ajouter la token dans les fichiers de configuration AWS
+Il faut également ajouter la token dans le fichier `credentials` de la configuration AWS
 {% endhint %}
 
 ### Initialisation de Terraform

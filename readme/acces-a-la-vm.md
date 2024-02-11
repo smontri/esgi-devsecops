@@ -23,13 +23,9 @@ La clé SSH téléchargée depuis le lab AWS s'appelle `labuser.pem`, attention 
 
 Remplacer \<adresse ip> par l'adresse ip publique fournie en résultat de la commande terraform
 
-L'utilisateur à utiliser est `ubuntu` car il s'agit d'une VM ubuntu
+L'utilisateur à utiliser est `ubuntu` car il s'agit d'une VM Ubuntu
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-L'utilisateur à utiliser est ubuntu
-{% endhint %}
 
 <mark style="color:red;">**Bravo ! Vous êtes connectés sur votre VM.**</mark>

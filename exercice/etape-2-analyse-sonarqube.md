@@ -1,8 +1,8 @@
-# Etape 2 : Analyse Sonarqube
+# Etape 2 : Analyse SonarQube
 
 Cette étape permet de configurer l'analyse de sécurité du code
 
-## Installation du plugin Sonarqube
+## Installation du plugin SonarQube
 
 L'installation se fait via le menu `Manage Jenkins -> Plugins`
 
@@ -36,7 +36,7 @@ Cette token doit ensuite être utilisée pour configurer les credentials Sonar d
 
 ## **Configuration du serveur SonarQube**
 
-Dans `Jenkins - Manage Jenkins -> System`, configurer le serveur SonarQube comme ci-dessous.
+Dans Jenkins - `Manage Jenkins -> System`, configurer le serveur SonarQube comme ci-dessous.
 
 <figure><img src="https://github.com/smontri/esgi-devsecops/raw/main/images/sonar-server-jenkins.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -46,7 +46,7 @@ Remplacer l'adresse IP du serveur par celle de la VM
 
 ## **Configuration du plugin SonarQube**
 
-Dans `Jenkins - Manage Jenkins -> Tools`, ajouter un scanner pour SonarQube
+Dans Jenkins - `Manage Jenkins -> Tools`, ajouter un scanner pour SonarQube
 
 <figure><img src="https://github.com/smontri/esgi-devsecops/raw/main/images/sonar-scanner-jenkins.jpg" alt=""><figcaption></figcaption></figure>
 
