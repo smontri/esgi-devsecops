@@ -37,19 +37,7 @@ kubectl version --client
 
 ## Ajout du stage de déploiement de Kubernetes
 
-### Création du namespace
-
-Le namespace est un espace d'isolation pour séparer les applications.
-
-Chaque groupe doit avoir un namespace dédié, ex `groupe1`
-
-Pour créer le namespace
-
-```bash
-kubectl create namespace groupe1
-```
-
-### Adpatation du déploiement
+### Adaptation du déploiement
 
 Il s'agit de remplacer l'image définie dans l'objet `deployment` par celle qui point vers votre compte Docker Hub.
 
@@ -77,6 +65,10 @@ stage('K8s'){
             }
         }
 ```
+
+{% hint style="danger" %}
+<mark style="color:red;">**Le namespace est crée par le pipeline, attention à lui donner le nom de votre groupe**</mark>
+{% endhint %}
 
 ## Lancer le build du pipeline
 
