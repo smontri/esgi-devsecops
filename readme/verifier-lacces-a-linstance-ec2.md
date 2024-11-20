@@ -1,8 +1,8 @@
 ---
-description: Comment accéder en SSH à la VM crée
+description: Etapes de vérification d'accès à l'instance EC2 via SSH
 ---
 
-# Accès à la VM
+# Vérifier l'accès à l'instance EC2
 
 Le code Terraform utilisé pour créer la VM s'appuie sur une paire de clés SSH nommée `vockey` qui est crée automatiquement par les labs AWS dans la région `us-east-1`.
 
@@ -10,7 +10,7 @@ La clé publique est copiée automatiquement sur la VM, alors que la clé privé
 
 Pour se connecter à la VM, utiliser `Putty` (Windows) ou `ssh` (Linux, MacOS, Windows WSL2).
 
-Dans Putty, il faudra configurer la clé SSH dans les informations de la connexion.
+Dans Putty, il faudra configurer la clé SSH **(.puk)** dans les informations de la connexion.
 
 _En commande ssh :_
 
@@ -19,9 +19,9 @@ ssh -i labuser.pem ubuntu@<adresse ip>
 ```
 
 {% hint style="info" %}
-La clé SSH téléchargée depuis le lab AWS s'appelle `labuser.pem`, attention de vérifier son nom et où elle a été téléchargée
+La clé SSH téléchargée depuis le lab AWS s'appelle `labuser.pem`, attention de vérifier son nom et l'emplacement où elle a été téléchargée
 
-Remplacer \<adresse ip> par l'adresse ip publique fournie en résultat de la commande terraform
+Remplacer _\<adresse ip>_ par l'adresse ip publique fournie en résultat de la commande terraform
 
 L'utilisateur à utiliser est `ubuntu` car il s'agit d'une VM Ubuntu
 {% endhint %}
