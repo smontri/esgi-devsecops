@@ -15,11 +15,11 @@ Dans Putty, il faudra configurer la clé SSH **(.puk)** dans les informations de
 _En commande ssh :_
 
 ```bash
-ssh -i labuser.pem ubuntu@<adresse ip>
+ssh -i labsuser.pem ubuntu@<adresse ip>
 ```
 
 {% hint style="info" %}
-La clé SSH téléchargée depuis le lab AWS s'appelle `labuser.pem`, attention de vérifier son nom et l'emplacement où elle a été téléchargée
+La clé SSH téléchargée depuis le lab AWS s'appelle `labsuser.pem`, attention de vérifier son nom et l'emplacement où elle a été téléchargée
 
 Remplacer _\<adresse ip>_ par l'adresse ip publique fournie en résultat de la commande terraform
 
