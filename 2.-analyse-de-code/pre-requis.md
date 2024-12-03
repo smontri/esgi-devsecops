@@ -7,5 +7,7 @@ description: Vérification des pré-requis sur votre poste de travail
 Les outils suivants doivent être installés sur votre poste de travail:
 
 * Docker (via Docker Desktop)
-* VSCode
 * Git
+* VSCode
+  * Ajout de l'extension Prisma Cloud
+  * Confi
