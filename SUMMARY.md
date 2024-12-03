@@ -2,11 +2,10 @@
 
 * [Introduction](README.md)
 * [1. Déploiement via Terraform](<README (1).md>)
-  * [Lab AWS](readme/lab-aws.md)
   * [Déploiement de la VM](readme/deploiement-de-la-vm.md)
   * [Vérifier l'accès à l'instance EC2](readme/verifier-lacces-a-linstance-ec2.md)
-* [2. Déploiement via GitHub Actions](2.-deploiement-via-github-actions/README.md)
-  * [Page 1](2.-deploiement-via-github-actions/page-1.md)
+* [2. Analyse de code](2.-analyse-de-code/README.md)
+  * [Pré-requis](2.-analyse-de-code/pre-requis.md)
 * [3. Pipeline DevSecOps](exercice/README.md)
   * [Etape 0 : Préparation de la VM](exercice/etape-0-preparation-de-la-vm/README.md)
     * [Application à déployer](exercice/etape-0-preparation-de-la-vm/application-a-deployer.md)
