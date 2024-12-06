@@ -1,6 +1,6 @@
 # Trivy
 
-## Installation de Trivy
+## Installation
 
 Utiliser les commandes ci-dessous pour installer Trivy
 

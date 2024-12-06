@@ -1,7 +1,5 @@
 # Installation de Jenkins
 
-L'installation de Jenkins se fait avec les commandes ci-dessous. Celles-ci sont regroupées dans le fichier `jenkins.sh`.
-
 ## Préparation de l'installation
 
 Créer un fichier `jenkins.sh` et y insérer le code ci-dessous
@@ -26,7 +24,7 @@ sudo systemctl start jenkins
 sudo systemctl status jenkins
 ```
 
-## Exécuter l'installation
+## Installation
 
 ```shell
 sudo chmod 777 jenkins.sh 
@@ -45,22 +43,22 @@ Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configur
 1. Arrêter le service Jenkins : `sudo systemctl stop jenkins`
 2. Vérifier que Jenkins est bien arrêté : `sudo systemctl status jenkins`
 3. Dans le fichier `/etc/default/jenkins`Modifier la valeur de la ligne `HTTP_PORT=` à <mark style="color:red;">8090</mark>&#x20;
-4. Dans le fichier /`lib/systemd/system/jenkins.service` modifier la valeur du port `Environments="Jenkins_port=` à <mark style="color:red;">8090</mark> &#x20;
+4. Dans le fichier `/lib/systemd/system/jenkins.service` modifier la valeur du port `Environments="Jenkins_port=` à <mark style="color:red;">8090</mark> &#x20;
 5. Redémarrer le daemon systemctl : `sudo systemctl daemon-reload`
 6. Redémarrer le service Jenkins : `sudo systemctl restart jenkins`
-7. Vérifier que Jenkins est bien démarré : `sudo systemctl status jenkins`
+7. Vérifier que le service Jenkins est bien démarré : `sudo systemctl status jenkins`
 
-## Première connexion à Jenkins
+## Connexion à Jenkins
 
-### **Pour se connecter à Jenkins, ouvir l'URL :**
+L'accès à la console Jenkins se fait via l'URL ci-dessous :
 
 `http://`_<mark style="color:red;">`<IP publique de la VM>`</mark>_`:8090`
 
-### **Récupérer le mot de passe admin :**
+Lors de la prmière connexion à Jenkins, utiliser le mot de passe Admin initial qui est stocké dans le fichier : `/var/lib/jenkins/secrets/initialAdminPassword`
 
-`sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+## **sds**
 
-### **Installer les plugins suggérés :**
+## **Installer les plugins suggérés**
 
 ![](../../images/jenkins1.png)
 
@@ -70,4 +68,4 @@ Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configur
 
 ### **Bravo vous êtes connecté à Jenkins !**
 
-![](../../images/Jenkins3.jpg)
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>

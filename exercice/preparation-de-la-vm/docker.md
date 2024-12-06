@@ -1,6 +1,6 @@
 # Docker
 
-## Installation de Docker
+## Installation
 
 Utiliser les commandes ci-dessous pour installer Docker sur la VM :
 
@@ -13,5 +13,5 @@ sudo usermod -aG docker $USER
 
 newgrp docker 
 
-sudo chmod 777 /var/run/docker.sock
+sudo chmod 744 /var/run/docker.sock
 ```
