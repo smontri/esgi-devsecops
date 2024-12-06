@@ -1,3 +1,9 @@
+---
+description: >-
+  Cette page décrit les étapes à suivre pour installer Jenkins sur l'instance
+  EC2.
+---
+
 # Installation de Jenkins
 
 ## Préparation de l'installation
@@ -27,18 +33,20 @@ sudo systemctl status jenkins
 ## Installation
 
 ```shell
-sudo chmod 777 jenkins.sh 
+sudo chmod 744 jenkins.sh 
 ./jenkins.sh
 ```
 
 ## Modification du port Jenkins
 
-> Le port utilisé par défaut par Jenkins est le 8080, dans le cadre de cet exercice, nous allons le changer pour le port 8090 car l'application finale sera exposée sur le port 8080
+> Le port utilisé par défaut par Jenkins est  8080, dans le cadre de cet exercice, nous allons le modifier pour le port 8090 afin d'éviter des conflits de ports
 
 Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configuration suivants :
 
 * `/etc/default/jenkins`&#x20;
 * `/lib/systemd/system/jenkins.service`
+
+Puis exécuter les étapes suivantes :
 
 1. Arrêter le service Jenkins : `sudo systemctl stop jenkins`
 2. Vérifier que Jenkins est bien arrêté : `sudo systemctl status jenkins`
@@ -48,7 +56,7 @@ Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configur
 6. Redémarrer le service Jenkins : `sudo systemctl restart jenkins`
 7. Vérifier que le service Jenkins est bien démarré : `sudo systemctl status jenkins`
 
-## Connexion à Jenkins
+## Première connexion à Jenkins
 
 L'accès à la console Jenkins se fait via l'URL ci-dessous :
 
@@ -56,16 +64,34 @@ L'accès à la console Jenkins se fait via l'URL ci-dessous :
 
 Lors de la prmière connexion à Jenkins, utiliser le mot de passe Admin initial qui est stocké dans le fichier : `/var/lib/jenkins/secrets/initialAdminPassword`
 
-## **sds**
+### Plugins suggérés
 
-## **Installer les plugins suggérés**
+Sélectionner l'installation des plugins suggérés (plugins par défaut de Jenkins)
 
 ![](../../images/jenkins1.png)
 
-### **Créer un utilisateur admin**
+### Création d'un utilisateur admin
 
-![](../../images/Jenkins2.jpg)
+Afin de personnaliser l'installation de Jenkins, créer un utilisateur administrateur avec le nom de votre groupe.&#x20;
 
-### **Bravo vous êtes connecté à Jenkins !**
+Exemple pour le groupe 1 ⇒ `groupe1`
+
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+
+### Validation de la configuration de l'instance
+
+Vérifier que l'URL Jenkins correspond bien à la configuration demandée
+
+`http://`_<mark style="color:red;">`<IP publique de la VM>`</mark>_`:8090`
+
+<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+
+### Jenkins est installé
+
+Puis cliquer sur `Start using Jenkins`
+
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+
+<mark style="color:red;">**Bravo ! Vous êtes connectés à votre instance Jenkins**</mark> :thumbsup:
 
 <figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
