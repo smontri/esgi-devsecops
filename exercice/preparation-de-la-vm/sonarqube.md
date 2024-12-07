@@ -1,8 +1,8 @@
-# Installation de Sonarqube
+# SonarQube
 
-SonarQube est un outil SAST qui permet l'analyse de sécurité du code. SonarQube est exécuté sous forme de conteneur.
+SonarQube est un outil SAST qui permet l'analyse de sécurité du code. Dans le cadre de ce TP, SonarQube est exécuté sous forme de conteneur.
 
-## Déploiement de SonarQube
+## Installation de SonarQube
 
 ```shell
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
@@ -14,7 +14,7 @@ Une fois le conteneur déployé, vérifiez qu'il est bien démarré et en état 
 
 ## Connnexion à SonarQube
 
-`http://<IP publique de la VM>:9000`
+`http://`_<mark style="color:red;">`<IP publique de la VM>`</mark>_`:9000`
 
 Les credentials à utiliser pour la première connexion sont `admin/admin`.
 

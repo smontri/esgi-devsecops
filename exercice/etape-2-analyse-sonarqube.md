@@ -80,7 +80,7 @@ environment {
 
 Ajout des étapes du pipeline, à ajouter en fin de liste des `stages`
 
-```javascript
+```java
 stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('sonar-server') {
