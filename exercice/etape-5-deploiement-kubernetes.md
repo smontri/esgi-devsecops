@@ -41,7 +41,7 @@ kubectl version --client
 
 Il s'agit de remplacer l'image définie dans l'objet `deployment` par celle qui point vers votre compte Docker Hub.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 Attention cette modification doit être faite dans votre fork du repository `jpestore-6`

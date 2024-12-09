@@ -2,11 +2,11 @@
 description: Etapes de vérification d'accès à l'instance EC2 via SSH
 ---
 
-# Vérifier l'accès à l'instance EC2
+# Accès à l'instance EC2
 
 Le code Terraform utilisé pour créer la VM s'appuie sur une paire de clés SSH nommée `vockey` qui est crée automatiquement par les labs AWS dans la région `us-east-1`.
 
-La clé publique est copiée automatiquement sur la VM, alors que la clé privée doit être téléchargée sur votre poste de travail.
+La clé publique est copiée automatiquement sur la VM via la configuration Terraform, alors que la clé privée doit être téléchargée sur votre poste de travail.
 
 Pour se connecter à la VM, utiliser `Putty` (Windows) ou `ssh` (Linux, MacOS, Windows WSL2).
 

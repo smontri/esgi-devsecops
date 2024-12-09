@@ -10,7 +10,7 @@ L'installation se fait via le menu `Manage Jenkins => Plugins`
 
 Dans la catégorie `Available plugins`, sélectionner `Eclipse Temurin installer`
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration du plugin
 

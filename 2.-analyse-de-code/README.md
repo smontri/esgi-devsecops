@@ -1,12 +1,14 @@
 ---
-description: Cet exercice est à faire directement sur votre poste de travail
+description: >-
+  Analyse de mauvaises configuration IaC et de vulnérabilités dans les packages
+  opensource
 ---
 
 # 2. Analyse de code
 
 ## Préambule
 
-Cet exercice permet de vérifier l'analyse de code pour illustrer l'approche `Shift Left.`
+Cet exercice permet d'exécuter l'analyse de code pour illustrer l'approche `Shift Left.`
 
 ## Pré-requis
 
@@ -16,15 +18,24 @@ Les outils suivants doivent être installés sur votre poste de travail:
 * Git
 * VSCode
 
-## Configuration de VSCode
+## Extensions pour VSCode
 
-### Extension Prisma Cloud
+### Prisma Cloud (Palo Alto Networks)
 
-Cette extension est nécessaire pour réaliser l'analyse de code.
+Cette extension est utile pour réaliser l'analyse de code directement depuis l'IDE VS Code.
 
-Il s'agit de la télécharger depuis la marketplace Visual Studio
+Elle est disponible sur la marketplace de Microsoft 👉 [https://marketplace.visualstudio.com/items?itemName=PrismaCloud.prisma-cloud](https://marketplace.visualstudio.com/items?itemName=PrismaCloud.prisma-cloud)
 
 <figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
-[https://marketplace.visualstudio.com/items?itemName=PrismaCloud.prisma-cloud](https://marketplace.visualstudio.com/items?itemName=PrismaCloud.prisma-cloud)
+Cette extension permet d'utiliser la version opensource de checkov (moteur d'analyse de code de Prisma Cloud). En version opensource, il n'est pas possible de d'exécuter l'analyse de vulnérabilités dans les packages opensource, communément appelé Software Composition Analysis (SCA).
 
+### Trivy (Aqua Security)
+
+Cette extension est utile pour réaliser l'analyse de code directement depuis l'IDE VS Code.
+
+Elle est disponible sur la marketplace de Microsoft 👉 [https://marketplace.visualstudio.com/items?itemName=AquaSecurityOfficial.trivy-official](https://marketplace.visualstudio.com/items?itemName=AquaSecurityOfficial.trivy-official)
+
+<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+
+Trivy étant complètement opensource, cette extension permet de faire l'analyse IaC et SCA.
