@@ -1,14 +1,6 @@
-# Etape 1 : Maven
+# Création et exécution du pipeline
 
-
-
-## Configuration du plugin Temurin
-
-Pour configurer le plugin comme indiqué ci-dessous, `Manage Jenkins -> Tools`
-
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
-
-## Création du job Jenkins
+## Premier build
 
 Créer un item dans Jenkins de type `Pipeline` que vous pouvez nommer `petstore`
 
