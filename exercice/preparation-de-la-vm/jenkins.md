@@ -4,7 +4,7 @@ description: >-
   EC2.
 ---
 
-# Installation de Jenkins
+# Jenkins
 
 ## Préparation de l'installation
 
@@ -46,7 +46,7 @@ Pour modifier le port de Jenkins, il s'agit de modifier les fichiers de configur
 * `/etc/default/jenkins`&#x20;
 * `/lib/systemd/system/jenkins.service`
 
-Puis exécuter les étapes suivantes :
+Pour cela, réaliser les étapes suivantes :
 
 1. Arrêter le service Jenkins : `sudo systemctl stop jenkins`
 2. Vérifier que Jenkins est bien arrêté : `sudo systemctl status jenkins`

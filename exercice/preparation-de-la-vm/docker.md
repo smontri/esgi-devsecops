@@ -1,6 +1,6 @@
 # Docker
 
-## Installation
+
 
 Utiliser les commandes ci-dessous pour installer Docker sur la VM :
 

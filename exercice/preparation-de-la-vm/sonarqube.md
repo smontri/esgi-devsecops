@@ -8,7 +8,7 @@ SonarQube est un outil SAST qui permet l'analyse de sécurité du code. Dans le 
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 ```
 
-Une fois le conteneur déployé, vérifiez qu'il est bien démarré et en état running[^1].
+Une fois le conteneur déployé, vérifiez qu'il est bien démarré et en état [`running`](#user-content-fn-1)[^1].
 
 ![Liste des conteneurs](../../images/docker-sonarqube.jpg)
 

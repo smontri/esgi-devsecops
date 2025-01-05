@@ -1,10 +1,10 @@
-# Création et exécution du pipeline
+# Premier build
 
-## Premier build
+## Création du projet
 
-Créer un item dans Jenkins de type `Pipeline` que vous pouvez nommer `petstore`
+Créer un item dans Jenkins de type `Pipeline` que vous nommez `petstore`
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 Et utliser le code ci-dessous pour définir le workflow du pipeline dans le bloc `Pipeline`
 
@@ -43,8 +43,10 @@ Et utliser le code ci-dessous pour définir le workflow du pipeline dans le bloc
 <mark style="color:orange;">**Utiliser votre fork du repository dans le stage**</mark><mark style="color:orange;">**&#x20;**</mark><mark style="color:orange;">**`checkout scm`**</mark>
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Lancer le build du pipeline
 
-<figure><img src="../.gitbook/assets/image (12).png" alt="" width="358"><figcaption></figcaption></figure>
+Pour lancer le premier build, cliquer sur `Build Now`
+
+<figure><img src="../../.gitbook/assets/image (37).png" alt="" width="348"><figcaption></figcaption></figure>

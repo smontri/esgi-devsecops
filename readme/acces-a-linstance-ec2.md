@@ -28,4 +28,6 @@ L'utilisateur à utiliser est `ubuntu` car il s'agit d'une VM Ubuntu
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-<mark style="color:red;">**Bravo ! Vous êtes connectés sur votre VM.**</mark>
+{% hint style="success" %}
+<mark style="color:green;">**Bravo ! Vous êtes connectés sur votre VM**</mark>
+{% endhint %}
