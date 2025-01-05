@@ -1,5 +1,3 @@
 # Création et exécution du pipeline
 
-## Premier build
-
-##
+Ce chapitre décrit les étapes pour céer le pipeline.

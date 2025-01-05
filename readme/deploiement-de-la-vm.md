@@ -18,7 +18,7 @@ Faire un fork du repository ci-dessous afin d'avoir votre repository sous votre 
 
 {% embed url="https://github.com/smontri/esgi-devsecops.git" %}
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Bouton fork depuis la page GitHub du repository
@@ -38,9 +38,9 @@ Le répertoire terraform contient les templates AWS et Azure pour le déploiemen
 
 Dans le cadre de ce TP, nous allons utiliser AWS avec le lab mis à disposition par votre intervenant.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Déploiement avec Terraform
 
@@ -72,7 +72,7 @@ Pour cela nous allons utiliser la commande `terraform init`
 terraform init
 ```
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Planification du déploiement
 
@@ -84,11 +84,11 @@ Pour cela, nous allons utiliser la commande `terraform plan`
 terraform plan
 ```
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Le résultat de la commande `terraform plan` indique le nombre de ressources qui vont être crées, mises à jour ou supprimées ainsi que les informations d'output telles que décrit dans les templates Terraform.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Déploiement de la VM
 
@@ -98,11 +98,11 @@ Le déploiement se fait via la commande `terraform apply` qui exécute le plan d
 terraform apply
 ```
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Le résultat de la commande `terraform apply` indique le résultat du déploiement.
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
