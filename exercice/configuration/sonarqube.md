@@ -20,19 +20,21 @@ Il s'agit de créer une token pour l'utilisateur admin de SonarQube qui sera uti
 
 La token créé précédemment doit  être utilisée pour configurer les credentials SonarQube dans Jenkins.
 
+Depuis le menu `Manage Jenkins ⇒ Credentials ⇒ System ⇒ Global`
 
+Créer des credentials de type `Secret text`
 
 <figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 > **Secret =** _token générée depuis SonarQube_
 >
-> **ID** = sonar-token
+> **ID** = `sonar-token`
 >
-> **Description** = Token de credentials pour SonarQube
+> **Description** = Credentials pour SonarQube
 
 ## **Configuration du serveur SonarQube**
 
-Dans Jenkins - `Manage Jenkins -> System`, configurer le serveur SonarQube comme ci-dessous.
+Dans Jenkins - `Manage Jenkins ⇒ System`, configurer le serveur SonarQube comme ci-dessous.
 
 <figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
@@ -44,13 +46,13 @@ Dans Jenkins - `Manage Jenkins -> System`, configurer le serveur SonarQube comme
 
 ## **Configuration du plugin SonarQube**
 
-Dans Jenkins - `Manage Jenkins -> Tools`, ajouter un scanner pour SonarQube
+Dans Jenkins - `Manage Jenkins ⇒ Tools`, ajouter un scanner pour SonarQube
 
 <figure><img src="https://github.com/smontri/esgi-devsecops/raw/main/images/sonar-scanner-jenkins.jpg" alt=""><figcaption></figcaption></figure>
 
 ## **Webhook pour SonarQube**
 
-Il s'agit de configurer un webhook dans SonarQube pour récupérer les informations d'analyse dans la console Jenkins.
+Configurer un webhook dans SonarQube pour récupérer les informations d'analyse dans la console Jenkins.
 
 Depuis la console SonarQube :
 
@@ -58,4 +60,4 @@ Depuis la console SonarQube :
 
 **Name** : `Jenkins`
 
-**URL** : `<http://<IP Jenkins:8090>/sonarqube-webhook/`
+**URL** : `<http://<IP EC2:8090>/sonarqube-webhook/`

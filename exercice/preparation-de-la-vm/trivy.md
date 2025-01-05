@@ -1,8 +1,13 @@
+---
+description: >-
+  Trivy est une solution OpenSource d'analyse de mauvaises configurations IaC,
+  de vulnérabilités dans les packages OpenSource et les images Docker, de
+  secrets, de licences.
+---
+
 # Trivy
 
-## Installation
-
-Utiliser les commandes ci-dessous pour installer Trivy
+Utiliser les commandes ci-dessous pour installer Trivy sur la VM
 
 ```shell
 sudo apt-get install wget apt-transport-https gnupg lsb-release -y
