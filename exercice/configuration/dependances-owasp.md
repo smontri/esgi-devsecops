@@ -5,3 +5,13 @@
 A configurer via `Manage Jenkins ⇒ Tools`
 
 <figure><img src="https://github.com/smontri/esgi-devsecops/raw/main/images/dp-config.jpg" alt=""><figcaption></figcaption></figure>
+
+## Clé API NVD
+
+Pour optimiser la vérification OWASP, nous utilisons une clé d'API pour invoquer la base de vulnérabilités NVD.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+Une clé d'API unique a été générée pour l'ensemble des classes, demandez la à votre intervenant
+{% endhint %}
