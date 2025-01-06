@@ -57,4 +57,4 @@ Lors du premier lancement, cette étape peut prendre un peu de temps...
 
 Le résultat doit ressembler à cela
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>

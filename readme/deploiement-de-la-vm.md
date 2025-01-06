@@ -38,7 +38,7 @@ Le répertoire terraform contient les templates AWS et Azure pour le déploiemen
 
 Dans le cadre de ce TP, nous allons utiliser AWS avec le lab mis à disposition par votre intervenant.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
