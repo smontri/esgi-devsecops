@@ -1,10 +1,4 @@
-# Etape 5 : Déploiement Kubernetes
-
-A présent, nous allons déployer l'application vers un cluster Kubernetes
-
-
-
-##
+# Déploiement Kubernetes
 
 ## Ajout du stage de déploiement de Kubernetes
 
@@ -12,7 +6,7 @@ A présent, nous allons déployer l'application vers un cluster Kubernetes
 
 Il s'agit de remplacer l'image définie dans l'objet `deployment` par celle qui point vers votre compte Docker Hub.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 Attention cette modification doit être faite dans votre fork du repository `jpestore-6`
@@ -43,4 +37,4 @@ stage('K8s'){
 
 ## Lancer le build du pipeline
 
-<figure><img src="../.gitbook/assets/image (16).png" alt="" width="358"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt="" width="358"><figcaption></figcaption></figure>
