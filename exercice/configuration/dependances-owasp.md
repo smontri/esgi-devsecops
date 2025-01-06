@@ -4,7 +4,7 @@
 
 A configurer via `Manage Jenkins ⇒ Tools`
 
-<figure><img src="https://github.com/smontri/esgi-devsecops/raw/main/images/dp-config.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 ## Clé API NVD
 
