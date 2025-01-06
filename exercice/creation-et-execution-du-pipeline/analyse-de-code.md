@@ -47,7 +47,7 @@ Le pipeline doit, à présent, ressembler à ceci :
 
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-## Résultas dans SonarQube
+## Résultats dans SonarQube
 
 Vous pouvez consulter le résultat de l'analyse SonarQube dans la vue `Projects` de la console SonarQube :
 

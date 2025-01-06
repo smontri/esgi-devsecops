@@ -2,6 +2,15 @@
 
 ## Modification du pipeline
 
+Ajout de la variable d'environnement pour la clé API NVD
+
+```
+environment {
+    SCANNER_HOME=tool 'sonar-scanner'
+    NVD_API_KEY=credentials('NVD_API')
+}
+```
+
 Ajout cette étape dans le pipeline, à ajouter en fin de liste des `stages`
 
 ```javascript
