@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+
+name: AWS_TF
+
+on:
+  #push:
+  #  branches:
+  #    - main  
+  #pull_request:
+  #  branches:
+  #    - main
+  workflow_dispatch:
+ 
+jobs:
+  terraform:
+    runs-on: ubuntu-latest  
+ 
+    steps:
+      # Checkout du code
+      - name: Checkout code
+        uses: actions/checkout@v2
+ 
+      # Configuration de Terraform
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+ 
+      # Configuration des identifiants AWS
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: us-east-1  
+ 
+      # Initialisation de Terraform
+      - name: Terraform Init
+        run: |
+          cd terraform/aws  
+          terraform init
+ 
+      # Planification de Terraform
+      - name: Terraform Plan
+        run: |
+          cd terraform/aws  
+          terraform plan -out=tfplan
+ 
+      # Application de Terraform
+      - name: Terraform Apply
+        run: |
+          cd terraform/aws
+          terraform apply -auto-approve tfplan
