@@ -34,3 +34,4 @@
     * [Dépendances OWASP](exercice/creation-et-execution-du-pipeline/dependances-owasp.md)
     * [Déploiement Docker](exercice/creation-et-execution-du-pipeline/deploiement-docker.md)
     * [Déploiement Kubernetes](exercice/creation-et-execution-du-pipeline/deploiement-kubernetes.md)
+* [Troubleshooting](troubleshooting.md)
