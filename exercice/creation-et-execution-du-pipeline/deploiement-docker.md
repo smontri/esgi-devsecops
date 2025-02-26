@@ -22,20 +22,20 @@
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh "docker tag petshop <USER>/petshop"
-                        sh "docker push <USER>/petshop"
+                        sh "docker tag petshop <DOCKER USER>/petshop"
+                        sh "docker push <DOCKER USER>/petshop"
                    }
                 }
             }
         }
         stage("Trivy scan"){
             steps{
-                sh "trivy image <USER>/petshop:latest > trivy.txt"
+                sh "trivy image <DOCKER USER>/petshop:latest > trivy.txt"
             }
         }
         stage ('Deploy to container'){
             steps{
-                sh 'docker run -d --name pet1 -p 8080:8080 <USER>/petshop:latest'
+                sh 'docker run -d --name pet1 -p 8080:8080 <DOCKER USER>/petshop:latest'
             }
         }
 ```
