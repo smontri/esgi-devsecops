@@ -37,6 +37,14 @@ sudo chmod 744 jenkins.sh
 ./jenkins.sh
 ```
 
+### Ajout du user jenkins au groupe Docker
+
+Il est nécessaire d'ajouter le user jenkins au groupe docker pour que Jenkins puisse exécuter les tâches Docker et redémarrer Jenkins (qui sera fait à l'étape suivante).
+
+```sh
+sudo usermod -aG docker jenkins
+```
+
 ## Modification du port Jenkins
 
 > Le port utilisé par défaut par Jenkins est  8080, dans le cadre de cet exercice, nous allons le modifier pour le port 8090 afin d'éviter des conflits de ports
