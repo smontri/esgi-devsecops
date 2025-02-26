@@ -9,25 +9,33 @@
 * Déploiement de l'image
 
 ```javascript
-stage ('Build and push to docker hub'){
+        stage ('Docker build'){
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                         sh "docker build -t petshop ."
-                        sh "docker tag petshop <dockerhub username>/petshop:latest"
-                        sh "docker push <dockerhub username>/petshop:latest"
                    }
                 }
             }
         }
-        stage("TRIVY"){
+        stage ('Docker Tag & Push'){
             steps{
-                sh "trivy image <dockerhub username>/petshop:latest > trivy.txt"
+                script{
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                        sh "docker tag petshop <USER>/petshop"
+                        sh "docker push <USER>/petshop"
+                   }
+                }
+            }
+        }
+        stage("Trivy scan"){
+            steps{
+                sh "trivy image <USER>/petshop:latest > trivy.txt"
             }
         }
         stage ('Deploy to container'){
             steps{
-                sh 'docker run -d --name pet1 -p 8080:8080 <dockerhub username>/petshop:latest'
+                sh 'docker run -d --name pet1 -p 8080:8080 <USER>/petshop:latest'
             }
         }
 ```
