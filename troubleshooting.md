@@ -8,15 +8,16 @@ Au cas où le Lab AWS s'est arrêté, voici les étapes à suivre :
 
 * La VM est toujours présente, il se peut qu'elle soit en statut stopped, dans ce cas la redémarrer depuis la console AWS (url AWS SSO)
   * si besoin de redémarrer la VM, il faudra redémarrer le container Sonarqube
+  * docjer
 *   Récupérer la nouvelle adresse IP
 
     * via la console AWS&#x20;
     * via la commande `aws ec2 describe-instances`
 
 
-* Modifier l'IP dans la configuration de Jenkins (l'interface sera vraiment lente pour y accéder)
+* Modifier l'IP dans la configuration de Jenkins en modifiant l'adresse IP dans le fichier <mark style="color:blue;">`/var/lib/jenkins/jenkins.model.JenkinsLocationConfiguration.xml`</mark>
 
-<figure><img src=".gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 * Modifier l'IP dans le Webhook dans Sonarqube
 
